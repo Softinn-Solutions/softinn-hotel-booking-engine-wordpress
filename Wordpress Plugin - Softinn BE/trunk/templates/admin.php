@@ -56,7 +56,7 @@
                         </p>
                     </td>
                 </tr>
-                <tr>
+                <tr>            
                     <th scope="row">Softinn Extranet</th>
                     <td>
                         <p>
@@ -69,8 +69,7 @@
                     <th scope="row">Get Hotel ID</th>
                     <td>
                         <p>
-                            <span class="dashicons dashicons-editor-help" style="color: #46b450;"></span> <a href='<?php echo esc_url_raw( "https://www.mysoftinn.com/Home/Contact" ); ?>' target="_blank">Need help?</a> Don't have a Hotel ID? <a href='<?php echo esc_url_raw( "https://page.mysoftinn.com/softinn-signup-form" ); ?>' target="_blank">Register here</a>
-                            
+                            <span class="dashicons dashicons-editor-help" style="color: #46b450;"></span> <a href='<?php echo esc_url_raw( "https://www.mysoftinn.com/Home/Contact" ); ?>' target="_blank">Need help?</a> Don't have a Hotel Id? <a href='<?php echo esc_url_raw( "https://page.mysoftinn.com/softinn-signup-form" ); ?>' target="_blank">Register here</a>
                         </p>
                     </td>
                 </tr>

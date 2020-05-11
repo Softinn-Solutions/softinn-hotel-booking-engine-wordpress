@@ -26,7 +26,7 @@
                     <th scope="row">Booking Engine</th>
                     <td>
                         <p>
-                            <span class="dashicons dashicons-desktop" style="color: #46b450;"></span> Copy this shortcode [softinnBE] and paste it anywhere in the page content, booking enngine will show up. 
+                            <span class="dashicons dashicons-desktop" style="color: #46b450;"></span> Copy this shortcode [softinnBE] and paste it anywhere in the page content, the booking engine will show up. 
                         </p>
                     </td>
                 </tr>
@@ -34,7 +34,7 @@
                     <th scope="row">Calendar Widget</th>
                     <td>
                         <p>
-                            <span class="dashicons dashicons-calendar-alt" style="color: #46b450;"></span> Install calendar widget by navitaging to Appearance > Widgets > Softinn Calendar Widget.
+                            <span class="dashicons dashicons-calendar-alt" style="color: #46b450;"></span> Install calendar widget by navigating to Appearance > Widgets > Softinn Calendar Widget.
                         </p>
                     </td>
                 </tr>
@@ -42,7 +42,7 @@
                     <th scope="row">Manage Bookings</th>
                     <td>
                         <p>
-                            <span class="dashicons dashicons-post-status" style="color: #46b450;"></span> To manage all the bookings received please visit 
+                            <span class="dashicons dashicons-post-status" style="color: #46b450;"></span> To manage all the bookings received, please visit 
                             <a href='<?php echo esc_url_raw( "https://booking.mysoftinn.com/Booking" ); ?>' target="_blank">Softinn Booking Dashboard →</a>
                         </p>
                     </td>
@@ -51,16 +51,16 @@
                     <th scope="row">Manage Price</th>
                     <td>
                         <p>
-                            <span class="dashicons dashicons-index-card" style="color: #46b450;"></span> To manage room price and calendar please visit
+                            <span class="dashicons dashicons-index-card" style="color: #46b450;"></span> To manage room price and calendar, please visit
                             <a href='<?php echo esc_url_raw( "https://booking.mysoftinn.com/Price" ); ?>' target="_blank">Softinn Room Price →</a>
                         </p>
                     </td>
                 </tr>
-                <tr>
+                <tr>            
                     <th scope="row">Softinn Extranet</th>
                     <td>
                         <p>
-                            <span class="dashicons dashicons-star-filled" style="color: #46b450;"></span> To manage calendar, users, promotions etc please visit
+                            <span class="dashicons dashicons-star-filled" style="color: #46b450;"></span> To manage calendar, users, promotions, etc., please visit
                             <a href='<?php echo esc_url_raw( "https://booking.mysoftinn.com" ); ?>' target="_blank">Softinn Extranet →</a>
                         </p>
                     </td>
@@ -70,7 +70,6 @@
                     <td>
                         <p>
                             <span class="dashicons dashicons-editor-help" style="color: #46b450;"></span> <a href='<?php echo esc_url_raw( "https://www.mysoftinn.com/Home/Contact" ); ?>' target="_blank">Need help?</a> Don't have a Hotel Id? <a href='<?php echo esc_url_raw( "https://page.mysoftinn.com/softinn-signup-form" ); ?>' target="_blank">Register here</a>
-                            
                         </p>
                     </td>
                 </tr>

@@ -10,4 +10,4 @@ This is a WordPress plugin created for Softinn users. It will enable booking eng
 
 ## Installing
 
-Download and install from WordPress Plugin directory, here's the [link](https://wordpress.org/plugins/softinn-booking-engine/)
+Download and install the plugin from WordPress Plugin directory, here's the [link](https://wordpress.org/plugins/softinn-booking-engine/).

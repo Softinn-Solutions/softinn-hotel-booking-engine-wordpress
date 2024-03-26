@@ -81,6 +81,12 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 			//SoftinnBEActivate::activate();
 		}
 
+		//deactivate the plugin
+		function deactivate() {
+			//require_once plugin_dir_path( __FILE__ ) . 'inc/softinn-booking-engine-deactivate.php';
+			//SoftinnBEDeactivate::deactivate();
+		}
+
 		//admin menu setup
 		function softinnBE_plugin_menu_setup() {
 			add_menu_page('Softinn Hotel Booking Engine', 'Softinn BE', 'manage_options', 'softinn_booking_engine', array($this,'admin_index'), plugins_url('/assets/images/icon-256x256.png', __FILE__));
@@ -114,6 +120,9 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 		public function iframe_plugin_add_shortcode_cb() {
 			global $wpdb;
 
+			//initialize the html
+			$html = '';
+
 			//get variable from db
 			$hotel_id = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'softinn_hotel_id'");
 			$theme_color = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'softinn_theme_color_temp'");
@@ -144,7 +153,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 			wp_enqueue_style('softinn-font-awesome-css', plugins_url( '/assets/all.css', __FILE__ ) );
 
 			// JS
-			wp_enqueue_script('jquery', plugins_url( '/assets/jquery-3.3.1.min.js', __FILE__ ), array(), '3.3.1', true);
+			wp_enqueue_script('jquery', plugins_url( '/assets/jquery-3.5.0.min.js', __FILE__ ), array(), '3.5.0', true);
 			wp_enqueue_script('jquery-ui', plugins_url( '/assets/jquery-ui.min.js', __FILE__ ), array(), '1.12.1', true);
 			wp_register_script('softinn_bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js');
 			wp_enqueue_script('softinn_bootstrap');

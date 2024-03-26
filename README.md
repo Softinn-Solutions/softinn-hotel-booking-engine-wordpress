@@ -1,12 +1,12 @@
 # Softinn Hotel Booking Engine Wordpress Plugin
 
-This is a WordPress plugin created for Softinn users. It will enable booking engine installation and calendar widget usage on your WordPress site.
+This Wordpress plugin is made specially for Softinn Users. It helps you add a booking system and calendar widget to your WordPress site easily.
 
 ## Features
 
-* Booking ending shortcode
-* Calendar widget
-* Customizable theme color
+* Booking ending shortcode - A Short tag that will enable the booking engine.
+* Calendar widget - A user-friendly calendar widget for streamlined booking management.
+* Customizable theme color - A personalize theme color to align with your website's branding.
 
 ## Installing
 

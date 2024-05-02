@@ -16,3 +16,4 @@ jobs:
         SVN_USERNAME: ${{ secrets.WORDPRESS_PLUGIN_PASSWORD }}
         SVN_PASSWORD: ${{ secrets.WORDPRESS_PLUGIN_PASSWORD }}
         SLUG: softinn-booking-engine
+        VERSION: 2.1.2

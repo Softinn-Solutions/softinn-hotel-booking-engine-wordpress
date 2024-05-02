@@ -78,6 +78,7 @@ Yes. Please signup as our partner here https://page.mysoftinn.com/softinn-partne
 = 2.1.2 =
 * Updated jquery
 * Tested with WordPress 6
+* Test update
 
 = 2.1.0 =
 * Updating plugins description and header images

@@ -2,22 +2,27 @@
 
 Contributors:      softinn
 Plugin Name:       Softinn Hotel Booking Engine
+Description:       This plugin integrates the Softinn Hotel Booking Engine with your WordPress website. Install it to unlock the power of room booking on WP.
 Plugin URI:        https://www.mysoftinn.com/
-Tags:              hotel booking engine, room booking engine, softinn, booking engine, reservation system, hotel, resort, BnB, widget, softinn booking engine wordpress, hotel promotion code
+Tags:              softinn, hotel booking engine, hotel reservation system, 
 Author URI:        https://www.mysoftinn.com/
 Author:            softinn
 Requires at least: 4.2.0
-Tested up to:      5.4.1
-Requires PHP: 5.6
+Tested up to:      6.4
+Requires PHP:      5.6
 Stable tag:        2.1.2
 Version:           2.1.2
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Hotel booking engine by Softinn is built for boutique hotels in Asia. Customizable. Support local payment gateways like iPay88, Midtrans, eGHL, PayPal etc. Email and SMS notification. Rule-based promotion code system.
+This plugin integrates the Softinn Hotel Booking Engine with your WordPress website. With just a few simple steps, you can install this plugin and unlock the power of room booking on your WordPress website. 
 
-Install this plugin to enable room booking on your WordPress website. 
+Softinn hotel booking engine is built for boutique hotels in Malaysia, Indonesia, and the Philippines. It is customizable, and it supports local payment gateways like iPay88, Midtrans, eGHL, Doku, and others.
 
-This plugin makes it easy for you to install Softinn booking engine on your WordPress site. Calendar widget to search for availability is included.   
+This plugin requires a Softinn Hotel Booking Engine account. If you don't have one, you may apply for one on the official website (www.mysoftinn.com).
+
+The Softinn Hotel Booking Engine WordPress plugin is a WP plugin that integrates with channel managers like Staah, SiteMinder, and Softinn Channel Managers. It has support for rate plans, promotion codes, cancellation policies, etc.
 
 Link to the service
 https://www.mysoftinn.com/
@@ -73,12 +78,10 @@ You write to us at support@mysoftinn.com or reach out on our Facebook Fan Page h
 
 Yes. Please signup as our partner here https://page.mysoftinn.com/softinn-partners
 
-
 == Changelog ==
 = 2.1.2 =
 * Updated jquery
 * Tested with WordPress 6
-* Test update
 
 = 2.1.0 =
 * Updating plugins description and header images

@@ -125,8 +125,8 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 			$hotel_id = get_option('softinn_hotel_id');
 			$theme_color = get_option('softinn_theme_color_temp');
 			
-			// check if hotelId has been set and append the value taken from db to the html link
-			if($hotel_id !== null) {
+			// check if hotelId is not null or an empty string and append the value taken from db to the html link
+			if($hotel_id !== null && $hotel_id !== '') {
 				$html .= '<iframe class="softinn-booking-engine" frameborder="0" src="https://booking.mysoftinn.com/BookHotelRoom/Web?hotelId=' . $hotel_id . '&themeColor='. $theme_color . '" autosize="true" > </iframe>' ;
 			}
 			else {

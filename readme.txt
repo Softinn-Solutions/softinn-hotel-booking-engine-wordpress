@@ -79,8 +79,11 @@ You write to us at support@mysoftinn.com or reach out on our Facebook Fan Page h
 Yes. Please signup as our partner here https://page.mysoftinn.com/softinn-partners
 
 == Changelog ==
-= 2.1.3 =
+= 2.1.4 =
 * Fix fetch data bugs
+
+= 2.1.3 =
+* Release latest version using Github Actions
 
 = 2.1.2 =
 * Updated jquery

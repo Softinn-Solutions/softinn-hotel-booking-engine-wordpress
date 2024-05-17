@@ -6,7 +6,7 @@
  * Plugin Name: Softinn Hotel Booking Engine
  * Plugin URI:  https://wordpress.org/plugins/
  * Description: Hotel Booking Engine for boutique hotels in Asia. Customizable. Support local payment gateways (iPay88, Midtrans, eGHL, PayPal etc). Email and SMS notification. Rule-based promotion code system.
- * Version:     2.1.2
+ * Version:     2.1.3
  * Author:      Softinn Solutions Sdn Bhd
  * Author URI:  https://www.mysoftinn.com/
  * License:     GPL3

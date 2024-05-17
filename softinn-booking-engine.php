@@ -6,7 +6,7 @@
  * Plugin Name: Softinn Hotel Booking Engine
  * Plugin URI:  https://wordpress.org/plugins/
  * Description: Hotel Booking Engine for boutique hotels in Asia. Customizable. Support local payment gateways (iPay88, Midtrans, eGHL, PayPal etc). Email and SMS notification. Rule-based promotion code system.
- * Version:     2.1.2
+ * Version:     2.1.3
  * Author:      Softinn Solutions Sdn Bhd
  * Author URI:  https://www.mysoftinn.com/
  * License:     GPL3
@@ -94,8 +94,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 
 		//admin form
 		public function admin_index() {
-			global $wpdb;
-		
+			
 			$requestNonce = get_option('softinn_admin_nonce');
 		
 			//if the nonce doesn't match
@@ -109,7 +108,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 				update_option('softinn_theme_color',sanitize_hex_color( $_POST["softinn_theme_color"] ));
 				
 				//take the value of color from db, then remove the #, then save it to db
-				$temp = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'softinn_theme_color'");
+				$temp = get_option('softinn_theme_color');
 				$remove_hash = substr($temp, strpos($temp, "#") + 1);  
 				update_option('softinn_theme_color_temp',sanitize_hex_color_no_hash( $remove_hash ));  
 			}
@@ -118,17 +117,16 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 
 		//setup the shortcode
 		public function iframe_plugin_add_shortcode_cb() {
-			global $wpdb;
-
+			
 			//initialize the html
 			$html = '';
 
 			//get variable from db
-			$hotel_id = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'softinn_hotel_id'");
-			$theme_color = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'softinn_theme_color_temp'");
+			$hotel_id = get_option('softinn_hotel_id');
+			$theme_color = get_option('softinn_theme_color_temp');
 			
-			// check if hotelId has been set and append the value taken from db to the html link
-			if(isset($hotel_id)) {
+			// check if hotelId is not null or an empty string and append the value taken from db to the html link
+			if($hotel_id !== null && $hotel_id !== '') {
 				$html .= '<iframe class="softinn-booking-engine" frameborder="0" src="https://booking.mysoftinn.com/BookHotelRoom/Web?hotelId=' . $hotel_id . '&themeColor='. $theme_color . '" autosize="true" > </iframe>' ;
 			}
 			else {

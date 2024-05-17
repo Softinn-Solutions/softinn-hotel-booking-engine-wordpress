@@ -28,7 +28,7 @@ class Softinn_CalendarWidget extends WP_WIDGET
 		$title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
 		$layoutConfig = empty($instance['layoutConfig']) ? 'Vertical' : $instance['layoutConfig'];
 
-		$hotel_id = $wpdb->get_var("SELECT option_value FROM wp_options WHERE option_name = 'softinn_hotel_id'");
+		$hotel_id = get_option('softinn_hotel_id');
 
 		$bookingpageVertical = 
 		'

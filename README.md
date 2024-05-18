@@ -13,3 +13,9 @@ The backend of the booking engine is available on this URL - [https://booking.my
 ## Installing
 
 Download and install the plugin from WordPress Plugin directory, here's the [link](https://wordpress.org/plugins/softinn-booking-engine/).
+
+## How to Publish an Update
+1. Update the version number in the `softinn-booking.engine.php` file.
+1. Update the version number in the `readme.txt` file. Update the Stable tag, Version, and Changelog. 
+1. Submit a pull request to the `develop` branch.
+1. The repo admin will request your pull request and publish it.

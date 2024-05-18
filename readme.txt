@@ -10,8 +10,8 @@ Author:            softinn
 Requires at least: 4.2.0
 Tested up to:      6.4
 Requires PHP:      5.6
-Stable tag:        2.1.2
-Version:           2.1.2
+Stable tag:        2.1.5
+Version:           2.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -79,6 +79,9 @@ You write to us at support@mysoftinn.com or reach out on our Facebook Fan Page h
 Yes. Please signup as our partner here https://page.mysoftinn.com/softinn-partners
 
 == Changelog ==
+= 2.1.5 =
+* Updated the README based on the WordPress latest format
+
 = 2.1.4 =
 * Fix fetch data bugs
 

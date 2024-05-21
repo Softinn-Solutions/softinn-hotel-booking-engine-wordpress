@@ -144,8 +144,8 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 		// enqueue all our scripts for the frontend
 		function softinn_enqueue_front(){
 			// CSS
-			wp_register_style('softinn_bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css');
-			wp_enqueue_style('softinn_bootstrap');
+			wp_register_style('softinn_tailwind', 'https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css');
+			wp_enqueue_style('softinn_tailwind');
 			wp_enqueue_style('softinn-iframe-css', plugins_url( '/assets/iframe.css', __FILE__ ) );
 			wp_enqueue_style('softinn-jq-ui-css', plugins_url( '/assets/jquery-ui.min.css', __FILE__ ) );
 			wp_enqueue_style('softinn-font-awesome-css', plugins_url( '/assets/all.css', __FILE__ ) );

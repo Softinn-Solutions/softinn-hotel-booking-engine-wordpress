@@ -33,56 +33,47 @@ class Softinn_CalendarWidget extends WP_WIDGET
 		$bookingpageVertical = 
 		'
 		<div class="softinn-calendarwidget">
-			<form target="_blank" method="get" action="https://booking.mysoftinn.com/BookHotelRoom/Web">
-				<input type="hidden" name="hotelId" value="'.$hotel_id.'">
-				<div class="form-group">
-					<div class="input-group mb-3">
-						<input class="form-control" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="input-group mb-3">
-						<input class="form-control" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
-					</div>
-				</div>
-
-				<button class="btn btn-primary btn-block" type="submit">Search</button>
-			</form>
+    		<form target="_blank" method="get" action="https://booking.mysoftinn.com/BookHotelRoom/Web">
+        		<input type="hidden" name="hotelId" value="'.$hotel_id.'">
+        		<div class="mb-3">
+            		<input class="border border-gray-300 rounded-md py-2 px-4" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
+        		</div>
+        		<div class="mb-3">
+            		<input class="border border-gray-300 rounded-md py-2 px-4" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
+        		</div>
+        		<button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full" type="submit">Search</button>
+    		</form>
 		</div>
 		';
 
 		$bookingpageHorizontal = 
 		'
 		<div class="softinn-calendarwidget">
-			<form target="_blank" method="get" action="https://booking.mysoftinn.com/BookHotelRoom/Web">
-				<input type="hidden" name="hotelId" value="'.$hotel_id.'">
-				<div class="form-row">
-					<div class="col-md-5">
-						<div class="form-group">
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="dashicons dashicons-calendar-alt"></i></span>
-								</div>
-								<input class="form-control" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-5">
-						<div class="form-group">
-							<div class="input-group mb-3">
-								<div class="input-group-prepend">
-									<span class="input-group-text"><i class="dashicons dashicons-calendar-alt"></i></span>
-								</div>
-								<input class="form-control" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-2">
-						<button class="btn btn-primary btn-block" type="submit">Search</button>
-					</div>
-				</div>
-			</form>
-		</div>
+    <form target="_blank" method="get" action="https://booking.mysoftinn.com/BookHotelRoom/Web">
+        <input type="hidden" name="hotelId" value="'.$hotel_id.'">
+        
+        <div class="flex flex-wrap -mx-3 mb-6">
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+                <div class="relative">
+                    <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
+                    <div class="absolute inset-y-0 right-0 flex items-center mr-3">
+                        <i class="dashicons dashicons-calendar-alt"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="w-full md:w-1/2 px-3">
+                <div class="relative">
+                    <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
+                    <div class="absolute inset-y-0 right-0 flex items-center mr-3">
+                        <i class="dashicons dashicons-calendar-alt"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-full w-full md:w-auto" type="submit">Search</button>
+    </form>
+</div>
 		';
 
 		echo $before_widget;

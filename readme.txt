@@ -15,6 +15,8 @@ Version:           2.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Unlock room booking power on your WP site with Softinn Hotel Booking Engine, tailored for boutique hotels in Southeast Asia.
+
 == Description ==
 This plugin integrates the Softinn Hotel Booking Engine with your WordPress website. With just a few simple steps, you can install this plugin and unlock the power of room booking on your WordPress website. 
 

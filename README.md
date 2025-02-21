@@ -6,11 +6,14 @@ The backend of the booking engine is available on this URL - [https://booking.my
 
 ## Features
 
-* Booking engine shortcode - A Short tag that will enable the booking engine.
-* Calendar widget - A user-friendly calendar widget for streamlined booking management.
-* Customizable theme color - A personalize theme color to align with your website's branding.
+Softinn offers a hotel booking engine with the following features:
+1. Booking widget for WordPress
+1. Payment collections using payment gateways. Here is the [link](https://www.mysoftinn.com/integrations) to the integrated payment gateways.
+1. Add the booking engine to your WordPress site using shortcode.
+1. Add the calendar widget to your WordPress site.
+1. Customizable theme color
 
-## Installing
+## How to Install Softinn WordPress Plugin
 
 Download and install the plugin from WordPress Plugin directory, here's the [link](https://wordpress.org/plugins/softinn-booking-engine/).
 

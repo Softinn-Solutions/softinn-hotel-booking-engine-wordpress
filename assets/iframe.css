@@ -1,21 +1,67 @@
-/* Responsive */
+/* Booking engine iframe */
 .softinn-booking-engine {
     width: 100%;
     min-height: 1000px;
     overflow: hidden;
-    height: 100% ;
-    padding:0 ;
+    height: 100%;
+    padding: 0;
     position: relative;
-    /*padding-bottom: 56.25%; 
-    padding-top: 25px;
-    height: 0;*/
 }
-.iframe-booking {
-    min-height: 920px;
+
+/* Calendar widget — vertical layout */
+.softinn-calendarwidget .sbe-field {
+    margin-bottom: 12px;
+}
+
+.softinn-calendarwidget input[type="text"] {
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    padding: 8px 16px;
+    box-sizing: border-box;
+}
+
+.softinn-calendarwidget .sbe-btn {
+    display: block;
     width: 100%;
-    /*position: absolute;
-    top: 0;
-    left: 0;
+    background-color: #3b82f6;
+    color: #fff;
+    font-weight: 700;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.softinn-calendarwidget .sbe-btn:hover {
+    background-color: #1d4ed8;
+}
+
+/* Calendar widget — horizontal layout */
+.softinn-calendarwidget .sbe-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    align-items: center;
+}
+
+.softinn-calendarwidget .sbe-col-input {
+    flex: 1 1 160px;
+    position: relative;
+}
+
+.softinn-calendarwidget .sbe-col-input input[type="text"] {
     width: 100%;
-    height: 100%;*/
+    padding-right: 36px;
+}
+
+.softinn-calendarwidget .sbe-col-input .sbe-icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+}
+
+.softinn-calendarwidget .sbe-col-btn {
+    flex: 0 0 auto;
 }

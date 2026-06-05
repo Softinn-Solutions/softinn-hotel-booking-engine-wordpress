@@ -4,7 +4,9 @@
  */
 class SoftinnBEActivate
 {
-	public static function activate() {
-		//flush_rewrite_rules(); //automatic flushing of the wp rewrite rules, can be commented if not using custom post types, use a lot of resources, use to avoid permalink not working properly
-	}
+    public static function activate() {
+        add_option( 'softinn_hotel_id', '' );
+        add_option( 'softinn_theme_color', '#8ebc00' );
+        add_option( 'softinn_theme_color_temp', '8ebc00' );
+    }
 }

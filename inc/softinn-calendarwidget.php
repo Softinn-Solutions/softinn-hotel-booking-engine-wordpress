@@ -22,72 +22,53 @@ class Softinn_CalendarWidget extends WP_WIDGET
      * @param array $instance
      */
     public function widget( $args, $instance ) {
-        global $wpdb;
+        $title = empty( $instance['title'] ) ? ' ' : apply_filters( 'widget_title', $instance['title'] );
+        $layoutConfig = empty( $instance['layoutConfig'] ) ? 'Vertical' : $instance['layoutConfig'];
 
-        extract($args, EXTR_SKIP);
-        $title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
-        $layoutConfig = empty($instance['layoutConfig']) ? 'Vertical' : $instance['layoutConfig'];
+        $hotel_id = get_option( 'softinn_hotel_id' );
 
-        $hotel_id = get_option('softinn_hotel_id');
+        $hotel_id_attr = esc_attr( $hotel_id );
 
-        $bookingpageVertical = 
-        '
-        <div class="softinn-calendarwidget">
+        $bookingpageVertical =
+        '<div class="softinn-calendarwidget">
             <form target="_blank" method="get" action="https://booking.mysoftinn.com/BookHotelRoom/Web">
-                <input type="hidden" name="hotelId" value="'.$hotel_id.'">
-                <div class="mb-3">
-                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
+                <input type="hidden" name="hotelId" value="' . $hotel_id_attr . '">
+                <div class="sbe-field">
+                    <input type="text" id="from" name="startDate" placeholder="Check-in" readonly>
                 </div>
-                <div class="mb-3">
-                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
+                <div class="sbe-field">
+                    <input type="text" id="to" name="endDate" placeholder="Check-out" readonly>
                 </div>
-                <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md w-full" type="submit">Search</button>
+                <button class="sbe-btn" type="submit">Search</button>
             </form>
-        </div>
-        ';
+        </div>';
 
-        $bookingpageHorizontal = 
-        '
-        <div class="softinn-calendarwidget">
+        $bookingpageHorizontal =
+        '<div class="softinn-calendarwidget">
             <form target="_blank" method="get" action="https://booking.mysoftinn.com/BookHotelRoom/Web">
-                <input type="hidden" name="hotelId" value="'.$hotel_id.'">
-        
-                <div class="flex flex-wrap -mx-3 mb-6">
-                    <div class="w-full md:w-5/12 px-3 mb-6 md:mb-0">
-                        <div class="relative">
-                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
-                            <div class="absolute inset-y-0 right-0 flex items-center mr-3">
-                                <i class="dashicons dashicons-calendar-alt"></i>
-                            </div>
-                        </div>
+                <input type="hidden" name="hotelId" value="' . $hotel_id_attr . '">
+                <div class="sbe-row">
+                    <div class="sbe-col-input">
+                        <input type="text" id="from" name="startDate" placeholder="Check-in" readonly>
+                        <span class="sbe-icon dashicons dashicons-calendar-alt"></span>
                     </div>
-                    <div class="w-full md:w-5/12 px-3 mb-6 md:mb-0">
-                        <div class="relative">
-                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
-                            <div class="absolute inset-y-0 right-0 flex items-center mr-3">
-                                <i class="dashicons dashicons-calendar-alt"></i>
-                            </div>
-                        </div>
+                    <div class="sbe-col-input">
+                        <input type="text" id="to" name="endDate" placeholder="Check-out" readonly>
+                        <span class="sbe-icon dashicons dashicons-calendar-alt"></span>
                     </div>
-                    <div class="w-full md:w-2/12 px-3">
-                        <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 pl-3 pr-10 rounded-md w-full md:min-w-max" type="submit">Search</button>
+                    <div class="sbe-col-btn">
+                        <button class="sbe-btn" type="submit">Search</button>
                     </div>
                 </div>
             </form>
-        </div>
-        ';
+        </div>';
 
-        echo $before_widget;
-        if (!empty($title))
-        {
-            echo $before_title . $title . $after_title;;
+        echo $args['before_widget'];
+        if ( ! empty( $title ) ) {
+            echo $args['before_title'] . $title . $args['after_title'];
         }
-        if ($layoutConfig == 'Horizontal'){
-            echo $bookingpageHorizontal;
-        } else {
-            echo $bookingpageVertical;
-        }
-        echo $after_widget;
+        echo $layoutConfig === 'Horizontal' ? $bookingpageHorizontal : $bookingpageVertical;
+        echo $args['after_widget'];
     }
 
     /**

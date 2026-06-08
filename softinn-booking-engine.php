@@ -127,7 +127,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             
             // check if hotelId is not null or an empty string and append the value taken from db to the html link
             if($hotel_id !== null && $hotel_id !== '') {
-                $html .= '<iframe class="softinn-booking-engine" frameborder="0" src="https://booking.mysoftinn.com/BookHotelRoom/Web?hotelId=' . $hotel_id . '&themeColor='. $theme_color . '" autosize="true" > </iframe>' ;
+                $html .= '<iframe class="softinn-booking-engine" frameborder="0" src="https://be.mysoftinn.com/bookhotelroom/' . $hotel_id . '" autosize="true" > </iframe>' ;
             }
             else {
                 $html .= '<p>'.esc_html('Please insert your hotel ID in Softinn BE plugin setting.').'</p>';

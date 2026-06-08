@@ -121,7 +121,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             
             // check if hotelId is not null or an empty string and append the value taken from db to the html link
             if($hotel_id !== null && $hotel_id !== '') {
-                $html .= '<iframe class="softinn-booking-engine" frameborder="0" src="https://be.mysoftinn.com/bookhotelroom/' . $hotel_id . '" autosize="true" > </iframe>' ;
+                $html .= '<iframe class="softinn-booking-engine" frameborder="0" src="https://be.mysoftinn.com/bookhotelroom/' . esc_attr($hotel_id) . '" autosize="true" > </iframe>' ;
             }
             else {
                 $html .= '<p>'.esc_html('Please insert your hotel ID in Softinn BE plugin setting.').'</p>';
@@ -148,8 +148,8 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             wp_register_script('softinn_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js');
             wp_enqueue_script('softinn_bootstrap');
             //Custom JS
-            wp_enqueue_script('softinn-datepicker-js', plugins_url( '/assets/datepicker.js', __FILE__ ), array('jquery', 'jquery-ui-datepicker'), '2.0', true);
-            wp_enqueue_script ('softinn-iframe-js',plugins_url( '/assets/iframe.js', __FILE__ ), array('jquery'), '2.0', true);
+            wp_enqueue_script('softinn-datepicker-js', plugins_url( '/assets/datepicker.js', __FILE__ ), array('jquery', 'jquery-ui-datepicker'), '2.2', true);
+            wp_enqueue_script ('softinn-iframe-js',plugins_url( '/assets/iframe.js', __FILE__ ), array('jquery'), '2.2', true);
         }
 
         // custom Admin Panel CSS

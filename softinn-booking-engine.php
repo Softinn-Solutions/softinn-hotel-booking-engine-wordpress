@@ -115,9 +115,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             //initialize the html
             $html = '';
 
-            //get variable from db
             $hotel_id = get_option('softinn_hotel_id');
-            $theme_color = get_option('softinn_theme_color_temp');
             
             // check if hotelId is not null or an empty string and append the value taken from db to the html link
             if($hotel_id !== null && $hotel_id !== '') {

@@ -96,20 +96,20 @@ class Softinn_CalendarWidget extends WP_WIDGET
      */
     public function form( $instance ) {
         // outputs the options form on admin
-        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Find A Room', 'text_domain' );
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Find A Room', 'softinn-booking-engine' );
         $layoutConfig = ! empty( $instance['layoutConfig'] ) ? $instance['layoutConfig'] : 'Vertical';
 
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label> 
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'softinn-booking-engine' ); ?></label> 
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
                     name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" 
                     type="text" value="<?php echo esc_attr( $title ); ?>">
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('layoutConfig'); ?>">Layout: 
-                <select class='widefat' id="<?php echo $this->get_field_id('layoutConfig'); ?>"
-                    name="<?php echo $this->get_field_name('layoutConfig'); ?>" type="text">
+            <label for="<?php echo esc_attr($this->get_field_id('layoutConfig')); ?>">Layout:
+                <select class='widefat' id="<?php echo esc_attr($this->get_field_id('layoutConfig')); ?>"
+                    name="<?php echo esc_attr($this->get_field_name('layoutConfig')); ?>" type="text">
                     <option value='Vertical'<?php echo ($layoutConfig=='Vertical')?'selected':''; ?>>
                         Vertical
                     </option>
@@ -137,7 +137,7 @@ class Softinn_CalendarWidget extends WP_WIDGET
         // processes widget options to be saved
         $instance = array();
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-        $instance['layoutConfig'] = $new_instance['layoutConfig'];
+        $instance['layoutConfig'] = isset($new_instance['layoutConfig']) ? sanitize_key($new_instance['layoutConfig']) : 'Vertical';
         return $instance;
     }
 }

@@ -145,12 +145,10 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             wp_enqueue_style('softinn-font-awesome-css', plugins_url( '/assets/all.css', __FILE__ ) );
 
             // JS
-            wp_enqueue_script('jquery', plugins_url( '/assets/jquery-3.5.0.min.js', __FILE__ ), array(), '3.5.0', true);
-            wp_enqueue_script('jquery-ui', plugins_url( '/assets/jquery-ui.min.js', __FILE__ ), array(), '1.12.1', true);
-            wp_register_script('softinn_bootstrap', '//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js');
+            wp_register_script('softinn_bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.min.js');
             wp_enqueue_script('softinn_bootstrap');
             //Custom JS
-            wp_enqueue_script ('softinn-datepicker-js',plugins_url( '/assets/datepicker.js', __FILE__ ), array('jquery', 'jquery-ui'), '2.0', true);
+            wp_enqueue_script('softinn-datepicker-js', plugins_url( '/assets/datepicker.js', __FILE__ ), array('jquery', 'jquery-ui-datepicker'), '2.0', true);
             wp_enqueue_script ('softinn-iframe-js',plugins_url( '/assets/iframe.js', __FILE__ ), array('jquery'), '2.0', true);
         }
 

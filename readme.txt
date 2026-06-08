@@ -81,6 +81,11 @@ You write to us at support@mysoftinn.com or reach out on our Facebook Fan Page h
 Yes. Please signup as our partner here https://page.mysoftinn.com/softinn-partners
 
 == Changelog ==
+= 2.2.0 =
+* Updated booking engine to new BEv5
+* Bug fixes and security improvements
+* Updated compatibility with WordPress 7.0
+
 = 2.1.6 =
 * Change from Bootstrap to Tailwind CSS.
 

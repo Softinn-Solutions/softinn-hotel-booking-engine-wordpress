@@ -44,7 +44,7 @@
                     <td>
                         <p>
                             <span class="dashicons dashicons-post-status" style="color: <?php echo esc_attr(get_option('softinn_theme_color') ?: '#8ebc00'); ?>;"></span> To manage all the bookings received, please visit 
-                            <a href='<?php echo esc_url_raw( "https://be.mysoftinn.com/booking" ); ?>' target="_blank">Softinn Booking Dashboard →</a>
+                            <a href='<?php echo esc_url( "https://be.mysoftinn.com/booking" ); ?>' target="_blank">Softinn Booking Dashboard →</a>
                         </p>
                     </td>
                 </tr>
@@ -53,7 +53,7 @@
                     <td>
                         <p>
                             <span class="dashicons dashicons-index-card" style="color: <?php echo esc_attr(get_option('softinn_theme_color') ?: '#8ebc00'); ?>;"></span> To manage room price and calendar, please visit
-                            <a href='<?php echo esc_url_raw( "https://be.mysoftinn.com/availability/table-view" ); ?>' target="_blank">Softinn Room Price →</a>
+                            <a href='<?php echo esc_url( "https://be.mysoftinn.com/availability/table-view" ); ?>' target="_blank">Softinn Room Price →</a>
                         </p>
                     </td>
                 </tr>
@@ -62,7 +62,7 @@
                     <td>
                         <p>
                             <span class="dashicons dashicons-star-filled" style="color: <?php echo esc_attr(get_option('softinn_theme_color') ?: '#8ebc00'); ?>;"></span> To manage calendar, users, promotions, etc., please visit
-                            <a href='<?php echo esc_url_raw( "https://be.mysoftinn.com" ); ?>' target="_blank">Softinn Booking Engine →</a>
+                            <a href='<?php echo esc_url( "https://be.mysoftinn.com" ); ?>' target="_blank">Softinn Booking Engine →</a>
                         </p>
                     </td>
                 </tr>
@@ -70,7 +70,7 @@
                     <th scope="row">Get Hotel ID</th>
                     <td>
                         <p>
-                            <span class="dashicons dashicons-editor-help" style="color: <?php echo esc_attr(get_option('softinn_theme_color') ?: '#8ebc00'); ?>;"></span> <a href='<?php echo esc_url_raw( "https://www.mysoftinn.com/contact-us" ); ?>' target="_blank">Need help?</a> Don't have a Hotel Id? <a href='<?php echo esc_url_raw( "https://page.mysoftinn.com/softinn-signup-form" ); ?>' target="_blank">Register here</a>
+                            <span class="dashicons dashicons-editor-help" style="color: <?php echo esc_attr(get_option('softinn_theme_color') ?: '#8ebc00'); ?>;"></span> <a href='<?php echo esc_url( "https://www.mysoftinn.com/contact-us" ); ?>' target="_blank">Need help?</a> Don't have a Hotel Id? <a href='<?php echo esc_url( "https://page.mysoftinn.com/softinn-signup-form" ); ?>' target="_blank">Register here</a>
                         </p>
                     </td>
                 </tr>
@@ -78,7 +78,7 @@
                     <th scope="row">For More Information</th>
                     <td>
                         <p>
-                            <span class="dashicons dashicons-editor-help" style="color: <?php echo esc_attr(get_option('softinn_theme_color') ?: '#8ebc00'); ?>;"></span> <a href='<?php echo esc_url_raw( "https://www.mysoftinn.com" ); ?>' target="_blank">Visit Official Website</a> or <a href='<?php echo esc_url_raw( "https://www.facebook.com/mySoftinn/" ); ?>' target="_blank">Facebook Fan Page</a>
+                            <span class="dashicons dashicons-editor-help" style="color: <?php echo esc_attr(get_option('softinn_theme_color') ?: '#8ebc00'); ?>;"></span> <a href='<?php echo esc_url( "https://www.mysoftinn.com" ); ?>' target="_blank">Visit Official Website</a> or <a href='<?php echo esc_url( "https://www.facebook.com/mySoftinn/" ); ?>' target="_blank">Facebook Fan Page</a>
                             
                         </p>
                     </td>

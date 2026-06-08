@@ -101,10 +101,6 @@ if ( !class_exists( 'SoftinnBE' ) ) {
                     wp_die("Security check failed.");
                 }
                 update_option('softinn_hotel_id', sanitize_text_field($_POST["softinn_hotel_id"]));
-                update_option('softinn_theme_color', sanitize_hex_color($_POST["softinn_theme_color"]));
-                $temp = get_option('softinn_theme_color');
-                $remove_hash = substr($temp, strpos($temp, "#") + 1);
-                update_option('softinn_theme_color_temp', sanitize_hex_color_no_hash($remove_hash));
             }
             require_once plugin_dir_path(__FILE__) . 'templates/admin.php';
         }
@@ -129,8 +125,6 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 
         // enqueue all our scripts for the backend
         function softinn_enqueue_back() {
-            wp_enqueue_style( 'wp-color-picker');
-            wp_enqueue_script( 'softinn-wp-color-picker', plugins_url( '/assets/iris-init.js', __FILE__ ), array( 'wp-color-picker' ), false, true  );
         }
 
         // enqueue all our scripts for the frontend

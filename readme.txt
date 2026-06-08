@@ -58,7 +58,7 @@ You may copy and paste [softinnBE] into any pages that you desire. It will displ
 
 = What is my Hotel ID? =
 
-Register for a Free account here https://page.mysoftinn.com/softinn-signup-form. Login and navigate to https://booking.mysoftinn.com/Marketplace to get your Hotel ID.
+Register for a Free account here https://page.mysoftinn.com/softinn-signup-form. Login and navigate to https://portal.mysoftinn.com/config/account to get your Hotel ID.
 
 = What is the price? =
 

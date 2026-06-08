@@ -2,7 +2,7 @@
 
 This Wordpress plugin is made specially for Softinn Users. It helps you add a booking system and calendar widget to your WordPress site easily.
 
-The backend of the booking engine is available on this URL - [https://booking.mysoftinn.com/](https://booking.mysoftinn.com/). You can set the price, allotment, and run promotions in our backend system. Pleaes use the signup button if you don't have an account.
+The backend of the booking engine is available on this URL - [https://be.mysoftinn.com/](https://be.mysoftinn.com/). You can set the price, allotment, and run promotions in our backend system. Pleaes use the signup button if you don't have an account.
 
 ## Features
 

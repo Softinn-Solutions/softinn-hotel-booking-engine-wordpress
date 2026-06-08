@@ -137,7 +137,8 @@ class Softinn_CalendarWidget extends WP_WIDGET
         // processes widget options to be saved
         $instance = array();
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-        $instance['layoutConfig'] = isset($new_instance['layoutConfig']) ? sanitize_key($new_instance['layoutConfig']) : 'Vertical';
+        $allowed_layouts = array('Vertical', 'Horizontal');
+        $instance['layoutConfig'] = in_array($new_instance['layoutConfig'], $allowed_layouts) ? $new_instance['layoutConfig'] : 'Vertical';
         return $instance;
     }
 }

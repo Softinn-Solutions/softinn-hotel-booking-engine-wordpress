@@ -7,11 +7,11 @@ Plugin URI:        https://www.mysoftinn.com/
 Tags:              softinn, hotel booking engine, hotel reservation system, 
 Author URI:        https://www.mysoftinn.com/
 Author:            softinn
-Requires at least: 4.2.0
-Tested up to:      6.4
-Requires PHP:      5.6
-Stable tag:        2.1.6
-Version:           2.1.6
+Requires at least: 5.0
+Tested up to:      7.0
+Requires PHP:      7.4
+Stable tag:        2.2.0
+Version:           2.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 

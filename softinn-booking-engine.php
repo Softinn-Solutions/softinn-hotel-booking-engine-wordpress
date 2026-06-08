@@ -3,13 +3,18 @@
  * @package  SoftinnBE
  */
 /**
- * Plugin Name: Softinn Hotel Booking Engine
- * Plugin URI:  https://wordpress.org/plugins/
- * Description: Hotel Booking Engine for boutique hotels in Asia. Customizable. Support local payment gateways (iPay88, Midtrans, eGHL, PayPal etc). Email and SMS notification. Rule-based promotion code system.
- * Version:     2.1.6
- * Author:      Softinn Solutions Sdn Bhd
- * Author URI:  https://www.mysoftinn.com/
- * License:     GPL3
+ * Plugin Name:       Softinn Hotel Booking Engine
+ * Plugin URI:        https://wordpress.org/plugins/softinn-hotel-booking-engine/
+ * Description:       Hotel Booking Engine for boutique hotels in Asia. Customizable. Support local payment gateways (iPay88, Midtrans, eGHL, PayPal etc). Email and SMS notification. Rule-based promotion code system.
+ * Version:           2.2.0
+ * Author:            Softinn Solutions Sdn Bhd
+ * Author URI:        https://www.mysoftinn.com/
+ * License:           GPLv2 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * Requires at least: 5.0
+ * Requires PHP:      7.4
+ * Tested up to:      7.0
+ * Text Domain:       softinn-booking-engine
  */
  /*
     Softinn Hotel Booking engine
@@ -50,7 +55,6 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             add_option('softinn_hotel_id'); //create new option_name row
             add_option('softinn_theme_color');
             add_option('softinn_theme_color_temp');
-            add_option('softinn_admin_nonce');
             include_once(ABSPATH . 'wp-includes/pluggable.php'); //inlude pluggable.php to use wp_get_current_user
             include_once('inc/softinn-calendarwidget.php'); //include the widget file
         }
@@ -62,10 +66,8 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             add_action( 'widgets_init', function(){register_widget( 'Softinn_CalendarWidget' );});
             //check if the user is who they claim to be
             if(current_user_can('administrator')){
-                 add_action('admin_menu', array( $this, 'softinnBE_plugin_menu_setup')); //admin menu will show-up if the user is admin
-                 $requestNonce =wp_create_nonce('form-nonce'); //create nonce if the user is admin
-                 update_option('softinn_admin_nonce',$requestNonce);
-            } 
+                 add_action('admin_menu', array( $this, 'softinnBE_plugin_menu_setup'));
+            }
         }
 
         //add custom settings link
@@ -94,25 +96,17 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 
         //admin form
         public function admin_index() {
-            
-            $requestNonce = get_option('softinn_admin_nonce');
-        
-            //if the nonce doesn't match
-            if(!wp_verify_nonce( $requestNonce, 'form-nonce' )){
-            
-                wp_die("Admin Form Hidden (nonce verification fail)");
-            }
-
-            if(isset($_POST["softinn_hotel_id"])) { 
-                update_option('softinn_hotel_id', sanitize_text_field( $_POST["softinn_hotel_id"] ));//update the value in db, from the POST 
-                update_option('softinn_theme_color',sanitize_hex_color( $_POST["softinn_theme_color"] ));
-                
-                //take the value of color from db, then remove the #, then save it to db
+            if (isset($_POST["softinn_hotel_id"])) {
+                if (!isset($_POST['softinn_nonce']) || !wp_verify_nonce($_POST['softinn_nonce'], 'softinn_save_settings')) {
+                    wp_die("Security check failed.");
+                }
+                update_option('softinn_hotel_id', sanitize_text_field($_POST["softinn_hotel_id"]));
+                update_option('softinn_theme_color', sanitize_hex_color($_POST["softinn_theme_color"]));
                 $temp = get_option('softinn_theme_color');
-                $remove_hash = substr($temp, strpos($temp, "#") + 1);  
-                update_option('softinn_theme_color_temp',sanitize_hex_color_no_hash( $remove_hash ));  
+                $remove_hash = substr($temp, strpos($temp, "#") + 1);
+                update_option('softinn_theme_color_temp', sanitize_hex_color_no_hash($remove_hash));
             }
-            require_once plugin_dir_path( __FILE__ ) . 'templates/admin.php';//call the admin html form
+            require_once plugin_dir_path(__FILE__) . 'templates/admin.php';
         }
 
         //setup the shortcode

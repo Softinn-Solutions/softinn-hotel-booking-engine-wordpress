@@ -22,9 +22,10 @@ class Softinn_CalendarWidget extends WP_WIDGET
      * @param array $instance
      */
     public function widget( $args, $instance ) {
-        global $wpdb;
-
-        extract($args, EXTR_SKIP);
+        $before_widget = $args['before_widget'] ?? '';
+        $after_widget  = $args['after_widget'] ?? '';
+        $before_title  = $args['before_title'] ?? '';
+        $after_title   = $args['after_title'] ?? '';
         $title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
         $layoutConfig = empty($instance['layoutConfig']) ? 'Vertical' : $instance['layoutConfig'];
 

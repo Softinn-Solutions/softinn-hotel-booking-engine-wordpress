@@ -9,8 +9,8 @@
  * Version:           2.2.0
  * Author:            Softinn Solutions Sdn Bhd
  * Author URI:        https://www.mysoftinn.com/
- * License:           GPLv2 or later
- * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+ * License:           GPLv3 or later
+ * License URI:       https://www.gnu.org/licenses/gpl-3.0.html
  * Requires at least: 5.0
  * Requires PHP:      7.0
  * Tested up to:      7.0
@@ -119,7 +119,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             
             // check if hotelId is not null or an empty string and append the value taken from db to the html link
             if($hotel_id !== null && $hotel_id !== '') {
-                $html .= '<iframe class="softinn-booking-engine" frameborder="0" src="https://be.mysoftinn.com/bookhotelroom/' . esc_attr($hotel_id) . '" autosize="true" > </iframe>' ;
+                $html .= '<iframe class="softinn-booking-engine" frameborder="0" src="' . esc_url('https://be.mysoftinn.com/bookhotelroom/' . rawurlencode($hotel_id)) . '" autosize="true" > </iframe>' ;
             }
             else {
                 $html .= '<p>'.esc_html('Please insert your hotel ID in Softinn BE plugin setting.').'</p>';

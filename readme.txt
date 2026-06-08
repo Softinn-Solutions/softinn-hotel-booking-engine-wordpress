@@ -9,7 +9,7 @@ Author URI:        https://www.mysoftinn.com/
 Author:            softinn
 Requires at least: 5.0
 Tested up to:      7.0
-Requires PHP:      7.4
+Requires PHP:      7.0
 Stable tag:        2.2.0
 Version:           2.2.0
 License: GPLv2 or later

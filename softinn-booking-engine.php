@@ -90,11 +90,10 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 
         //admin form
         public function admin_index() {
-            if (isset($_POST["softinn_hotel_id"])) {
-                if (!isset($_POST['softinn_nonce']) || !wp_verify_nonce($_POST['softinn_nonce'], 'softinn_save_settings')) {
-                    wp_die("Security check failed.");
-                }
-                update_option('softinn_hotel_id', sanitize_text_field($_POST["softinn_hotel_id"]));
+            if (isset($_POST['softinn_hotel_id'])) {
+                check_admin_referer('softinn_save_settings', 'softinn_nonce');
+                $hotel_id = preg_replace('/[^0-9]/', '', wp_unslash($_POST['softinn_hotel_id']));
+                update_option('softinn_hotel_id', $hotel_id);
             }
             require_once plugin_dir_path(__FILE__) . 'templates/admin.php';
         }

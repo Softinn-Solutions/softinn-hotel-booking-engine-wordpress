@@ -49,12 +49,9 @@ if ( !class_exists( 'SoftinnBE' ) ) {
         //construct will be the first thing to be run after the plugin activated
         function __construct() {
             $this->plugin_name = plugin_basename( __FILE__ ); //the plugin name stored in $plugin_name
-            add_action('admin_enqueue_scripts', array( $this, 'softinn_enqueue_back' ) );
             add_action('wp_enqueue_scripts', array($this,'softinn_enqueue_front') );
             add_action('admin_head', array($this,'softinn_custom_admin_panel'));
-            add_option('softinn_hotel_id'); //create new option_name row
-            add_option('softinn_theme_color');
-            add_option('softinn_theme_color_temp');
+            add_option('softinn_hotel_id');
             include_once(ABSPATH . 'wp-includes/pluggable.php'); //inlude pluggable.php to use wp_get_current_user
             include_once('inc/softinn-calendarwidget.php'); //include the widget file
         }
@@ -122,10 +119,6 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             }
             return $html;
         } 
-
-        // enqueue all our scripts for the backend
-        function softinn_enqueue_back() {
-        }
 
         // enqueue all our scripts for the frontend
         function softinn_enqueue_front(){

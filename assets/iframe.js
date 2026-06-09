@@ -7,6 +7,7 @@ jQuery(document).ready(function($){
     var messageEvent = eventMethod == "attachEvent" ? "onmessage" : "message";
 
     eventer(messageEvent, function (e) {
+        if (e.origin !== "https://be.mysoftinn.com") { return; }
         if (e.data == "back-to-top") {
             if ($(".softinn-booking-engine").parent() != undefined) {
                 $("html,body").animate({

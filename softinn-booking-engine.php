@@ -61,10 +61,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             add_shortcode('softinnBE', array( $this, 'iframe_plugin_add_shortcode_cb'));
             add_filter( "plugin_action_links_$this->plugin_name", array( $this, 'settings_link' ) );
             add_action( 'widgets_init', function(){register_widget( 'Softinn_CalendarWidget' );});
-            //check if the user is who they claim to be
-            if(current_user_can('administrator')){
-                 add_action('admin_menu', array( $this, 'softinnBE_plugin_menu_setup'));
-            }
+            add_action('admin_menu', array( $this, 'softinnBE_plugin_menu_setup'));
         }
 
         //add custom settings link

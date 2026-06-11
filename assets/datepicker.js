@@ -13,6 +13,18 @@ jQuery(document).ready(function($){
         var $fromHidden = $('<input type="hidden" name="startDate">').insertAfter($fromDisplay);
         var $toHidden = $('<input type="hidden" name="endDate">').insertAfter($toDisplay);
 
+        // Initialise hidden fields from restored display values (e.g. bfcache back/forward)
+        if ($fromDisplay.val()) {
+            try {
+                $fromHidden.val($.datepicker.formatDate("yy-mm-dd", $.datepicker.parseDate("dd MM yy", $fromDisplay.val())));
+            } catch(e) {}
+        }
+        if ($toDisplay.val()) {
+            try {
+                $toHidden.val($.datepicker.formatDate("yy-mm-dd", $.datepicker.parseDate("dd MM yy", $toDisplay.val())));
+            } catch(e) {}
+        }
+
         $toDisplay.datepicker({
             dateFormat: 'dd MM yy',
             allowInputToggle: true,

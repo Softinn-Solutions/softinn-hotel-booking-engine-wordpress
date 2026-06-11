@@ -127,7 +127,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 
             // JS
             //Custom JS
-            wp_enqueue_script('softinn-datepicker-js', plugins_url( '/assets/datepicker.js', __FILE__ ), array('jquery', 'jquery-ui-datepicker'), '2.4', true);
+            wp_enqueue_script('softinn-datepicker-js', plugins_url( '/assets/datepicker.js', __FILE__ ), array('jquery', 'jquery-ui-datepicker'), '2.5', true);
             wp_enqueue_script ('softinn-iframe-js',plugins_url( '/assets/iframe.js', __FILE__ ), array('jquery'), '2.3', true);
         }
 

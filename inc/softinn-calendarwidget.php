@@ -31,7 +31,14 @@ class Softinn_CalendarWidget extends WP_WIDGET
 
         $hotel_id = get_option('softinn_hotel_id');
 
-        $bookingpageVertical = 
+        if (empty($hotel_id)) {
+            echo $before_widget;
+            echo '<p>' . esc_html__('Please insert your hotel ID in Softinn BE plugin setting.', 'softinn-booking-engine') . '</p>';
+            echo $after_widget;
+            return;
+        }
+
+        $bookingpageVertical =
         '
         <div class="softinn-calendarwidget">
             <form target="_blank" rel="noopener noreferrer" method="get" action="'.esc_url('https://be.mysoftinn.com/bookhotelroom/' . rawurlencode($hotel_id) . '/room-detail').'">

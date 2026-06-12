@@ -11,7 +11,7 @@
                     <th>Hotel ID</th>
                     <td>
                         <fieldset>
-                            <input class="regular-text" type="text" name="softinn_hotel_id" pattern="^[0-9]*" value="<?php echo esc_attr(get_option('softinn_hotel_id')); ?>" />
+                            <input class="regular-text" type="text" name="softinn_hotel_id" pattern="^[0-9]*$" value="<?php echo esc_attr(get_option('softinn_hotel_id')); ?>" />
                         </fieldset>
                     </td>
                 </tr>

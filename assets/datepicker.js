@@ -28,6 +28,16 @@ jQuery(document).ready(function($){
         syncIsoValue($fromDisplay, $fromHidden);
         syncIsoValue($toDisplay, $toHidden);
 
+        // Restore checkout minDate based on restored check-in value
+        if ($fromDisplay.val()) {
+            try {
+                var restoredFrom = $.datepicker.parseDate('dd MM yy', $fromDisplay.val());
+                var minCheckout = new Date(restoredFrom);
+                minCheckout.setDate(minCheckout.getDate() + 1);
+                $toDisplay.datepicker('option', 'minDate', minCheckout);
+            } catch (err) {}
+        }
+
         $toDisplay.datepicker({
             dateFormat: 'dd MM yy',
             allowInputToggle: true,

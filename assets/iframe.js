@@ -8,6 +8,12 @@ jQuery(document).ready(function($){
 
     eventer(messageEvent, function (e) {
         if (e.origin !== "https://be.mysoftinn.com") { return; }
+        var iframes = document.querySelectorAll('.softinn-booking-engine');
+        var fromOurIframe = false;
+        for (var i = 0; i < iframes.length; i++) {
+            if (e.source === iframes[i].contentWindow) { fromOurIframe = true; break; }
+        }
+        if (!fromOurIframe) { return; }
         if (e.data == "back-to-top") {
             if ($(".softinn-booking-engine").parent() != undefined) {
                 $("html,body").animate({

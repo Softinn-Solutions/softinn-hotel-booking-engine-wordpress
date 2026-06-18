@@ -51,7 +51,6 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             $this->plugin_name = plugin_basename( __FILE__ ); //the plugin name stored in $plugin_name
             add_action('wp_enqueue_scripts', array($this,'softinn_enqueue_front') );
             add_action('admin_head', array($this,'softinn_custom_admin_panel'));
-            add_option('softinn_hotel_id');
             include_once(ABSPATH . 'wp-includes/pluggable.php'); //inlude pluggable.php to use wp_get_current_user
             include_once('inc/softinn-calendarwidget.php'); //include the widget file
         }
@@ -127,7 +126,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
 
             // JS
             //Custom JS
-            wp_enqueue_script('softinn-datepicker-js', plugins_url( '/assets/datepicker.js', __FILE__ ), array('jquery', 'jquery-ui-datepicker'), '2.7', true);
+            wp_enqueue_script('softinn-datepicker-js', plugins_url( '/assets/datepicker.js', __FILE__ ), array('jquery', 'jquery-ui-datepicker'), '2.8', true);
             wp_enqueue_script ('softinn-iframe-js',plugins_url( '/assets/iframe.js', __FILE__ ), array('jquery'), '2.4', true);
         }
 

@@ -18,10 +18,10 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Unlock room booking power on your WP site with Softinn Hotel Booking Engine, tailored for boutique hotels in Southeast Asia.
 
 == Description ==
-This plugin integrates the Softinn Hotel Booking Engine with your WordPress website. With just a few simple steps, you can install this plugin and unlock the power of room booking on your WordPress website. 
+Add a professional hotel booking engine to your WordPress website and start accepting direct bookings in minutes.
+The Softinn Hotel Booking Engine is designed for boutique hotels, resorts, guesthouses, and serviced apartments in Malaysia, Indonesia, and the Philippines. It enables guests to check availability, view rates, and complete reservations directly on your website, helping you increase direct bookings and reduce dependency on OTAs.
 
-Softinn hotel booking engine is built for boutique hotels in Malaysia, Indonesia, and the Philippines. It is customizable, and it supports local payment gateways like iPay88, Midtrans, eGHL, Doku, and others.
-
+Softinn's "Hotel Direct Booking Path" - Traffic > Offer > Convert is the sales funnel framework for hotels to increase direct bookings.
 This plugin requires a Softinn Hotel Booking Engine account. If you don't have one, you may apply for one on the official website (www.mysoftinn.com).
 
 The Softinn Hotel Booking Engine WordPress plugin is a WP plugin that integrates with channel managers like Staah, SiteMinder, and Softinn Channel Managers. It has support for rate plans, promotion codes, cancellation policies, etc.
@@ -82,7 +82,7 @@ Yes. Please signup as our partner here https://page.mysoftinn.com/softinn-partne
 
 == Changelog ==
 = 2.2.0 =
-* Updated booking engine to new BEv5
+* Updated booking engine to new BE (version 5)
 * Bug fixes and security improvements
 * Updated compatibility with WordPress 7.0
 

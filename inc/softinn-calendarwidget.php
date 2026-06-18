@@ -43,10 +43,10 @@ class Softinn_CalendarWidget extends WP_WIDGET
         <div class="softinn-calendarwidget">
             <form target="_blank" rel="noopener noreferrer" method="get" action="'.esc_url('https://be.mysoftinn.com/bookhotelroom/' . rawurlencode($hotel_id) . '/room-detail').'">
                 <div class="mb-3">
-                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
+                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" name="startDate" placeholder="Check-in" readonly>
                 </div>
                 <div class="mb-3">
-                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
+                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" name="endDate" placeholder="Check-out" readonly>
                 </div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md w-full" type="submit">Search</button>
             </form>
@@ -61,7 +61,7 @@ class Softinn_CalendarWidget extends WP_WIDGET
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-5/12 px-3 mb-6 md:mb-0">
                         <div class="relative">
-                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
+                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" name="startDate" placeholder="Check-in" readonly>
                             <div class="absolute inset-y-0 right-0 flex items-center mr-3">
                                 <i class="dashicons dashicons-calendar-alt"></i>
                             </div>
@@ -69,7 +69,7 @@ class Softinn_CalendarWidget extends WP_WIDGET
                     </div>
                     <div class="w-full md:w-5/12 px-3 mb-6 md:mb-0">
                         <div class="relative">
-                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
+                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" name="endDate" placeholder="Check-out" readonly>
                             <div class="absolute inset-y-0 right-0 flex items-center mr-3">
                                 <i class="dashicons dashicons-calendar-alt"></i>
                             </div>

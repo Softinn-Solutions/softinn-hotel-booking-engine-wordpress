@@ -57,7 +57,6 @@ class Softinn_CalendarWidget extends WP_WIDGET
         '
         <div class="softinn-calendarwidget">
             <form target="_blank" rel="noopener noreferrer" method="get" action="'.esc_url('https://be.mysoftinn.com/bookhotelroom/' . rawurlencode($hotel_id) . '/room-detail').'">
-
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-5/12 px-3 mb-6 md:mb-0">
                         <div class="relative">

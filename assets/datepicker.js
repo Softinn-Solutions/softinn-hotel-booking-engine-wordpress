@@ -29,23 +29,25 @@ jQuery(document).ready(function($){
         syncIsoValue($toDisplay, $toHidden);
 
         // Restore checkout minDate based on restored check-in value
+        var restoredMinCheckout = null;
         if ($fromDisplay.val()) {
             try {
                 var restoredFrom = $.datepicker.parseDate('dd MM yy', $fromDisplay.val());
-                var minCheckout = new Date(restoredFrom);
-                minCheckout.setDate(minCheckout.getDate() + 1);
-                $toDisplay.datepicker('option', 'minDate', minCheckout);
+                restoredMinCheckout = new Date(restoredFrom);
+                restoredMinCheckout.setDate(restoredMinCheckout.getDate() + 1);
             } catch (err) {}
         }
 
-        $toDisplay.datepicker({
+        var toOptions = {
             dateFormat: 'dd MM yy',
             allowInputToggle: true,
             onSelect: function(dateText) {
                 var date = $.datepicker.parseDate('dd MM yy', dateText);
                 $toHidden.val($.datepicker.formatDate('yy-mm-dd', date));
             }
-        });
+        };
+        if (restoredMinCheckout) { toOptions.minDate = restoredMinCheckout; }
+        $toDisplay.datepicker(toOptions);
 
         $fromDisplay.datepicker({
             dateFormat: 'dd MM yy',

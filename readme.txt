@@ -37,7 +37,7 @@ https://page.mysoftinn.com/terms-of-service
 
 == Installation ==
 1. Download the Softinn Hotel Booking Engine plugin into your wordpress plugin directory (wp-content/plugins).
-2. Set the Hotel Id and the Theme Color in the Softinn BE admin menu.
+2. Set the Hotel Id in the Softinn BE admin menu.
 3. Copy shortcode and paste into the pages to install the booking engine.
 4. Drag and drop Softinn Widget on the Appearance > Widget page.
 
@@ -70,7 +70,7 @@ Add the calendar widget by dragging it to your widget sidebar at the Appearance>
 
 = Can I change the color of the booking engine? =
 
-Yes. You may use the colour picker to select the colour at the Softinn BE admin menu page.
+Yes. You can customise your booking engine's theme, colours, and branding from the Softinn Booking Engine at https://be.mysoftinn.com/booking-engine/customize.
 
 = I need help, who to contact? =
 

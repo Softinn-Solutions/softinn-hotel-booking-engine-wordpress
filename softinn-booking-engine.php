@@ -107,7 +107,7 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             
             // check if hotelId is not null or an empty string and append the value taken from db to the html link
             if($hotel_id !== null && $hotel_id !== '') {
-                $html .= '<iframe class="softinn-booking-engine" frameborder="0" src="' . esc_url('https://be.mysoftinn.com/bookhotelroom/' . rawurlencode($hotel_id)) . '" autosize="true" > </iframe>' ;
+                $html .= '<iframe class="softinn-booking-engine" frameborder="0" src="' . esc_url('https://be.mysoftinn.com/bookhotelroom/' . rawurlencode($hotel_id)) . '" > </iframe>' ;
             }
             else {
                 $html .= '<p>'.esc_html('Please insert your hotel ID in Softinn BE plugin setting.').'</p>';
@@ -122,7 +122,6 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             wp_enqueue_style('softinn_tailwind');
             wp_enqueue_style('softinn-iframe-css', plugins_url( '/assets/iframe.css', __FILE__ ) );
             wp_enqueue_style('softinn-jq-ui-css', plugins_url( '/assets/jquery-ui.min.css', __FILE__ ) );
-            wp_enqueue_style('softinn-font-awesome-css', plugins_url( '/assets/all.css', __FILE__ ) );
 
             // JS
             //Custom JS

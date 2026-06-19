@@ -86,10 +86,6 @@
                 </tr>
             </tbody>
         </table>
-        <?php 
-        if(current_user_can('administrator')){
-            submit_button('Save Settings', 'primary'); 
-        } 
-        ?>
+        <?php submit_button('Save Settings', 'primary'); ?>
     </form>
 </div>

@@ -51,7 +51,6 @@ if ( !class_exists( 'SoftinnBE' ) ) {
             $this->plugin_name = plugin_basename( __FILE__ ); //the plugin name stored in $plugin_name
             add_action('wp_enqueue_scripts', array($this,'softinn_enqueue_front') );
             add_action('admin_head', array($this,'softinn_custom_admin_panel'));
-            include_once(ABSPATH . 'wp-includes/pluggable.php'); //inlude pluggable.php to use wp_get_current_user
             include_once('inc/softinn-calendarwidget.php'); //include the widget file
         }
 

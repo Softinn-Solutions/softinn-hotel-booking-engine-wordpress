@@ -1,14 +1,66 @@
 jQuery(document).ready(function($){
-  (function()
-  {
-    var fullmonth_array = $.datepicker._defaults.monthNames;
-    $("#to").datepicker({ dateFormat: 'dd MM yy',allowInputToggle: true });
-    $("#from").datepicker({ dateFormat: 'dd MM yy',minDate: 1, allowInputToggle: true,
-    buttonImageOnly: true }).bind("change",function(){
-        var minValue = $(this).val();
-        minValue = $.datepicker.parseDate("dd MM yy", minValue);
-        minValue.setDate(minValue.getDate()+1);
-        $("#to").datepicker( "option", "minDate", minValue );
-    })
-  })(jQuery);
+    var syncIsoValue = function ($display, $hidden) {
+        var v = $display.val();
+        if (!v) { $hidden.val(''); return; }
+        try {
+            var d = $.datepicker.parseDate('dd MM yy', v);
+            $hidden.val($.datepicker.formatDate('yy-mm-dd', d));
+        } catch (err) {
+            $hidden.val('');
+        }
+    };
+
+    $('.softinn-calendarwidget').each(function(index) {
+        var $form = $(this).find('form');
+        var uid = 'softinn-' + index;
+
+        var $fromDisplay = $form.find('[placeholder="Check-in"]')
+            .removeAttr('name')
+            .attr('id', uid + '-from');
+        var $toDisplay = $form.find('[placeholder="Check-out"]')
+            .removeAttr('name')
+            .attr('id', uid + '-to');
+
+        var $fromHidden = $('<input type="hidden" name="startDate">').insertAfter($fromDisplay);
+        var $toHidden = $('<input type="hidden" name="endDate">').insertAfter($toDisplay);
+
+        // Initialise hidden fields from restored display values (e.g. bfcache back/forward)
+        syncIsoValue($fromDisplay, $fromHidden);
+        syncIsoValue($toDisplay, $toHidden);
+
+        // Restore checkout minDate based on restored check-in value
+        var restoredMinCheckout = null;
+        if ($fromDisplay.val()) {
+            try {
+                var restoredFrom = $.datepicker.parseDate('dd MM yy', $fromDisplay.val());
+                restoredMinCheckout = new Date(restoredFrom);
+                restoredMinCheckout.setDate(restoredMinCheckout.getDate() + 1);
+            } catch (err) {}
+        }
+
+        var toOptions = {
+            dateFormat: 'dd MM yy',
+            allowInputToggle: true,
+            onSelect: function(dateText) {
+                var date = $.datepicker.parseDate('dd MM yy', dateText);
+                $toHidden.val($.datepicker.formatDate('yy-mm-dd', date));
+            }
+        };
+        if (restoredMinCheckout) { toOptions.minDate = restoredMinCheckout; }
+        $toDisplay.datepicker(toOptions);
+
+        $fromDisplay.datepicker({
+            dateFormat: 'dd MM yy',
+            minDate: 1,
+            allowInputToggle: true,
+            buttonImageOnly: true,
+            onSelect: function(dateText) {
+                var date = $.datepicker.parseDate('dd MM yy', dateText);
+                $fromHidden.val($.datepicker.formatDate('yy-mm-dd', date));
+                var minDate = new Date(date);
+                minDate.setDate(minDate.getDate() + 1);
+                $toDisplay.datepicker('option', 'minDate', minDate);
+            }
+        });
+    });
 });

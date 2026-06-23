@@ -22,24 +22,31 @@ class Softinn_CalendarWidget extends WP_WIDGET
      * @param array $instance
      */
     public function widget( $args, $instance ) {
-        global $wpdb;
-
-        extract($args, EXTR_SKIP);
+        $before_widget = $args['before_widget'] ?? '';
+        $after_widget  = $args['after_widget'] ?? '';
+        $before_title  = $args['before_title'] ?? '';
+        $after_title   = $args['after_title'] ?? '';
         $title = empty($instance['title']) ? ' ' : apply_filters('widget_title', $instance['title']);
         $layoutConfig = empty($instance['layoutConfig']) ? 'Vertical' : $instance['layoutConfig'];
 
         $hotel_id = get_option('softinn_hotel_id');
 
-        $bookingpageVertical = 
+        if (empty($hotel_id)) {
+            echo $before_widget;
+            echo '<p>' . esc_html__('Please insert your hotel ID in Softinn BE plugin setting.', 'softinn-booking-engine') . '</p>';
+            echo $after_widget;
+            return;
+        }
+
+        $bookingpageVertical =
         '
         <div class="softinn-calendarwidget">
-            <form target="_blank" method="get" action="https://booking.mysoftinn.com/BookHotelRoom/Web">
-                <input type="hidden" name="hotelId" value="'.$hotel_id.'">
+            <form target="_blank" rel="noopener noreferrer" method="get" action="'.esc_url('https://be.mysoftinn.com/bookhotelroom/' . rawurlencode($hotel_id) . '/room-detail').'">
                 <div class="mb-3">
-                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
+                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" name="startDate" placeholder="Check-in" readonly>
                 </div>
                 <div class="mb-3">
-                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
+                    <input class="border border-gray-300 rounded-md py-2 px-4" type="text" name="endDate" placeholder="Check-out" readonly>
                 </div>
                 <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md w-full" type="submit">Search</button>
             </form>
@@ -49,13 +56,11 @@ class Softinn_CalendarWidget extends WP_WIDGET
         $bookingpageHorizontal = 
         '
         <div class="softinn-calendarwidget">
-            <form target="_blank" method="get" action="https://booking.mysoftinn.com/BookHotelRoom/Web">
-                <input type="hidden" name="hotelId" value="'.$hotel_id.'">
-        
+            <form target="_blank" rel="noopener noreferrer" method="get" action="'.esc_url('https://be.mysoftinn.com/bookhotelroom/' . rawurlencode($hotel_id) . '/room-detail').'">
                 <div class="flex flex-wrap -mx-3 mb-6">
                     <div class="w-full md:w-5/12 px-3 mb-6 md:mb-0">
                         <div class="relative">
-                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" id="from" name="startDate" placeholder="Check-in" readonly>
+                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" name="startDate" placeholder="Check-in" readonly>
                             <div class="absolute inset-y-0 right-0 flex items-center mr-3">
                                 <i class="dashicons dashicons-calendar-alt"></i>
                             </div>
@@ -63,7 +68,7 @@ class Softinn_CalendarWidget extends WP_WIDGET
                     </div>
                     <div class="w-full md:w-5/12 px-3 mb-6 md:mb-0">
                         <div class="relative">
-                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" id="to" name="endDate" placeholder="Check-out" readonly>
+                            <input class="block w-full py-2 pl-3 pr-10 leading-tight border rounded-md" type="text" name="endDate" placeholder="Check-out" readonly>
                             <div class="absolute inset-y-0 right-0 flex items-center mr-3">
                                 <i class="dashicons dashicons-calendar-alt"></i>
                             </div>
@@ -97,20 +102,20 @@ class Softinn_CalendarWidget extends WP_WIDGET
      */
     public function form( $instance ) {
         // outputs the options form on admin
-        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Find A Room', 'text_domain' );
+        $title = ! empty( $instance['title'] ) ? $instance['title'] : esc_html__( 'Find A Room', 'softinn-booking-engine' );
         $layoutConfig = ! empty( $instance['layoutConfig'] ) ? $instance['layoutConfig'] : 'Vertical';
 
         ?>
         <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'text_domain' ); ?></label> 
+            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'softinn-booking-engine' ); ?></label> 
             <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"
                     name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" 
                     type="text" value="<?php echo esc_attr( $title ); ?>">
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id('layoutConfig'); ?>">Layout: 
-                <select class='widefat' id="<?php echo $this->get_field_id('layoutConfig'); ?>"
-                    name="<?php echo $this->get_field_name('layoutConfig'); ?>" type="text">
+            <label for="<?php echo esc_attr($this->get_field_id('layoutConfig')); ?>">Layout:
+                <select class='widefat' id="<?php echo esc_attr($this->get_field_id('layoutConfig')); ?>"
+                    name="<?php echo esc_attr($this->get_field_name('layoutConfig')); ?>" type="text">
                     <option value='Vertical'<?php echo ($layoutConfig=='Vertical')?'selected':''; ?>>
                         Vertical
                     </option>
@@ -138,7 +143,9 @@ class Softinn_CalendarWidget extends WP_WIDGET
         // processes widget options to be saved
         $instance = array();
         $instance['title'] = ( ! empty( $new_instance['title'] ) ) ? sanitize_text_field( $new_instance['title'] ) : '';
-        $instance['layoutConfig'] = $new_instance['layoutConfig'];
+        $allowed_layouts = array('Vertical', 'Horizontal');
+        $layout = isset($new_instance['layoutConfig']) ? $new_instance['layoutConfig'] : '';
+        $instance['layoutConfig'] = in_array($layout, $allowed_layouts, true) ? $layout : 'Vertical';
         return $instance;
     }
 }

@@ -4,27 +4,35 @@ Contributors:      softinn
 Plugin Name:       Softinn Hotel Booking Engine
 Description:       This plugin integrates the Softinn Hotel Booking Engine with your WordPress website. Install it to unlock the power of room booking on WP.
 Plugin URI:        https://www.mysoftinn.com/
-Tags:              softinn, hotel booking engine, hotel reservation system, 
+Tags:              hotel booking engine, hotel reservation system, booking, payment gateway, hotel payments
 Author URI:        https://www.mysoftinn.com/
 Author:            softinn
-Requires at least: 4.2.0
-Tested up to:      6.4
-Requires PHP:      5.6
-Stable tag:        2.1.6
-Version:           2.1.6
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Requires at least: 5.0
+Tested up to:      7.0
+Requires PHP:      7.0
+Stable tag:        2.2.0
+Version:           2.2.0
+License: GPLv3 or later
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
-Unlock room booking power on your WP site with Softinn Hotel Booking Engine, tailored for boutique hotels in Southeast Asia.
+Accept direct hotel bookings on WordPress with built-in local payment gateways (iPay88, eGHL, Billplz, PesoPay, Doku, Midtrans & PayPal).
 
 == Description ==
-This plugin integrates the Softinn Hotel Booking Engine with your WordPress website. With just a few simple steps, you can install this plugin and unlock the power of room booking on your WordPress website. 
+Add a professional hotel booking engine to your WordPress website and start accepting direct bookings in minutes.
+The Softinn Hotel Booking Engine is designed for boutique hotels, resorts, guesthouses, and serviced apartments in Malaysia, Indonesia, and the Philippines. It enables guests to check availability, view rates, and complete reservations directly on your website, helping you increase direct bookings and reduce dependency on OTAs.
 
-Softinn hotel booking engine is built for boutique hotels in Malaysia, Indonesia, and the Philippines. It is customizable, and it supports local payment gateways like iPay88, Midtrans, eGHL, Doku, and others.
-
+Softinn's "Hotel Direct Booking Path" - Traffic > Offer > Convert is the sales funnel framework for hotels to increase direct bookings.
 This plugin requires a Softinn Hotel Booking Engine account. If you don't have one, you may apply for one on the official website (www.mysoftinn.com).
 
 The Softinn Hotel Booking Engine WordPress plugin is a WP plugin that integrates with channel managers like Staah, SiteMinder, and Softinn Channel Managers. It has support for rate plans, promotion codes, cancellation policies, etc.
+
+**Built-in local payment gateways.** Collect deposits or full payment at the time of booking through the payment gateway your guests already trust. The Softinn Hotel Booking Engine supports local and international payment gateways across Southeast Asia:
+* Malaysia: iPay88, eGHL, Billplz
+* Indonesia: Doku, Midtrans
+* Philippines: PesoPay
+* International / credit & debit cards: PayPal, plus GHL, Verifone and Paysys card processing
+
+See the full, up-to-date list at https://www.mysoftinn.com/integrations
 
 Link to the service
 https://www.mysoftinn.com/
@@ -37,7 +45,7 @@ https://page.mysoftinn.com/terms-of-service
 
 == Installation ==
 1. Download the Softinn Hotel Booking Engine plugin into your wordpress plugin directory (wp-content/plugins).
-2. Set the Hotel Id and the Theme Color in the Softinn BE admin menu.
+2. Set the Hotel Id in the Softinn BE admin menu.
 3. Copy shortcode and paste into the pages to install the booking engine.
 4. Drag and drop Softinn Widget on the Appearance > Widget page.
 
@@ -58,7 +66,7 @@ You may copy and paste [softinnBE] into any pages that you desire. It will displ
 
 = What is my Hotel ID? =
 
-Register for a Free account here https://page.mysoftinn.com/softinn-signup-form. Login and navigate to https://booking.mysoftinn.com/Marketplace to get your Hotel ID.
+Register for a Free account here https://page.mysoftinn.com/softinn-signup-form. Login and navigate to https://portal.mysoftinn.com/config/account to get your Hotel ID.
 
 = What is the price? =
 
@@ -70,7 +78,11 @@ Add the calendar widget by dragging it to your widget sidebar at the Appearance>
 
 = Can I change the color of the booking engine? =
 
-Yes. You may use the colour picker to select the colour at the Softinn BE admin menu page.
+Yes. You can customise your booking engine's theme, colours, and branding from the Softinn Booking Engine at https://be.mysoftinn.com/booking-engine/customize.
+
+= Which payment gateways are supported? =
+
+The Softinn Hotel Booking Engine integrates local and international payment gateways so you can collect payments directly on your WordPress site. Supported gateways include iPay88, eGHL and Billplz (Malaysia), Doku and Midtrans (Indonesia), PesoPay (Philippines), and PayPal, alongside GHL, Verifone and Paysys card processing. See the full list at https://www.mysoftinn.com/integrations.
 
 = I need help, who to contact? =
 
@@ -81,6 +93,12 @@ You write to us at support@mysoftinn.com or reach out on our Facebook Fan Page h
 Yes. Please signup as our partner here https://page.mysoftinn.com/softinn-partners
 
 == Changelog ==
+= 2.2.0 =
+* Updated booking engine to new BE (version 5)
+* Documented supported local payment gateways (iPay88, eGHL, Billplz, Doku, Midtrans, PesoPay, PayPal) in the plugin listing
+* Bug fixes and security improvements
+* Updated compatibility with WordPress 7.0
+
 = 2.1.6 =
 * Change from Bootstrap to Tailwind CSS.
 

@@ -8,7 +8,7 @@ Tags:              hotel booking engine, hotel reservation system, booking, paym
 Author URI:        https://www.mysoftinn.com/
 Author:            softinn
 Requires at least: 5.0
-Tested up to:      7.0
+Tested up to:      7.2
 Requires PHP:      7.0
 Stable tag:        2.2.0
 Version:           2.2.0

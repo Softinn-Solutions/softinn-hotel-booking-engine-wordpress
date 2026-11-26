@@ -3,10 +3,10 @@ name: Update readme/assets on WordPress.org
 # Stable tag WITHOUT cutting a new release. Use for "Tested up to" bumps,
 # description tweaks, banners and screenshots.
 #
-# Run manually from the Actions tab (on master) after the change is merged.
+# Run manually from the Actions tab (on develop) after the change is merged.
 # Only readme.txt and .wordpress-org/ are uploaded; any other changed files
 # (e.g. the plugin header) are ignored and go out with the next tagged
-# release via deploy.yml.
+# release via deploy.yml (push a version tag).
 on:
   workflow_dispatch:
 

@@ -10,8 +10,8 @@ Author:            softinn
 Requires at least: 5.0
 Tested up to:      7.2
 Requires PHP:      7.0
-Stable tag:        2.2.0
-Version:           2.2.0
+Stable tag:        2.2.1
+Version:           2.2.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -93,6 +93,9 @@ You write to us at support@mysoftinn.com or reach out on our Facebook Fan Page h
 Yes. Please signup as our partner here https://page.mysoftinn.com/softinn-partners
 
 == Changelog ==
+= 2.2.1 =
+* Tested with WordPress 7.2
+
 = 2.2.0 =
 * Updated booking engine to new BE (version 5)
 * Documented supported local payment gateways (iPay88, eGHL, Billplz, Doku, Midtrans, PesoPay, PayPal) in the plugin listing
